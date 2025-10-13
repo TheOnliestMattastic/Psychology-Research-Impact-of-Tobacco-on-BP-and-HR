@@ -1,0 +1,288 @@
+---
+title: "Smoking and Blood Pressure"
+author: "Matthew Poole Chicano"
+date: "2022-07-27"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading Prerequisites
+
+Loading tidyverse:
+```{r}
+library(tidyverse)
+library(DescTools)
+```
+
+Loading the dataset:
+```{r}
+heart <- read.csv("heart_cleaned.csv")
+```
+
+## Data Preparation
+
+Viewing the structure:
+```{r}
+str(heart)
+```
+
+Removing unnecessary columns:
+```{r}
+heart <-
+  select(
+    heart,
+    randid,
+    sex,
+    age,
+    sysbp,
+    diabp,
+    cigpday,
+    heartrte,
+    prevhyp,
+    hyperten,
+    timehyp
+  )
+
+head(heart)
+```
+
+Filtering for smokers:
+```{r}
+smokers <- filter(heart, cigpday >= 1)
+```
+
+Creating smoking status categories:
+```{r}
+smokers <-
+  mutate(
+    smokers,
+    smkerst =
+      case_when(
+        cigpday <= 5 ~ "light",
+        cigpday >= 6 & cigpday <= 20 ~ "moderate",
+        cigpday >= 21 ~ "heavy"
+      )
+  )
+
+head(smokers, 10)
+```
+
+Converting necessary data into factors:
+```{r}
+smokers <- mutate(smokers,
+                  sex = factor(smokers$sex, labels = c("Male", "Female")),
+                  smkerst = factor(smokers$smkerst, levels = c("light", "moderate", "heavy"),
+                                    labels = c("Light", "Moderate", "Heavy")))
+
+str(smokers)
+```
+
+## Descriptive Statistics
+
+Comparing by smoking status:
+```{r}
+smokers_descrip <- summarise(group_by(smokers, smkerst),
+                             N = n(),
+                             Mean_SysBP = mean(sysbp, na.rm = TRUE),
+                             Mean_DiaBP = mean(diabp, na.rm = TRUE),
+                             Mean_Heartrate = mean(heartrte, na.rm = TRUE),
+                             SD_SysBP = sd(sysbp, na.rm = TRUE),
+                             SD_DiaBP = sd(diabp, na.rm = TRUE),
+                             SD_Heartrate = sd(heartrte, na.rm = TRUE),
+                             SE_SysBP = sd(sysbp, na.rm = TRUE)/sqrt(N),
+                             SE_DiaBP = sd(diabp, na.rm = TRUE)/sqrt(N),
+                             SE_Heartrate = sd(heartrte, na.rm = TRUE)/sqrt(N))
+
+smokers_descrip
+```
+
+Comparing by smoking status and sex:
+```{r}
+smokers_descrip_sex <- summarise(group_by(smokers, smkerst, sex),
+                             N = n(),
+                             Mean_SysBP = mean(sysbp, na.rm = TRUE),
+                             Mean_DiaBP = mean(diabp, na.rm = TRUE),
+                             Mean_Heartrate = mean(heartrte, na.rm = TRUE),
+                             SD_SysBP = sd(sysbp, na.rm = TRUE),
+                             SD_DiaBP = sd(diabp, na.rm = TRUE),
+                             SD_Heartrate = sd(heartrte, na.rm = TRUE),
+                             SE_SysBP = sd(sysbp, na.rm = TRUE)/sqrt(N),
+                             SE_DiaBP = sd(diabp, na.rm = TRUE)/sqrt(N),
+                             SE_Heartrate = sd(heartrte, na.rm = TRUE)/sqrt(N))
+
+smokers_descrip_sex
+```
+
+Summary of participants:
+```{r}
+summarise(group_by(smokers, sex),
+          N = n(),
+          Mean_Age = mean(age),
+          SD = sd(age),
+          Min = min(age),
+          Max = max(age))
+```
+
+Total participant statistics:
+```{r}
+summarise(smokers,
+          N = n(),
+          Mean_Age = mean(age, na.rm = TRUE),
+          SD = sd(age, na.rm = TRUE),
+          Min = min(age, na.rm = TRUE),
+          Max = max(age, na.rm = TRUE))
+```
+
+Group-by-sex and smoking status age analysis:
+```{r}
+summarise(group_by(smokers, smkerst, sex),
+          N = n(),
+          Mean_Age = mean(age, na.rm = TRUE),
+          SD = sd(age, na.rm = TRUE))
+```
+
+## Visualizations
+
+Bar graph of blood pressure by smoking status:
+```{r}
+# Creating data frame for plotting
+smokers_tb <- tribble(
+  ~smkerst, ~BPtype, ~value, ~SE,
+  "Light", "SysBP", 135.0591, 2.5228948,
+  "Light", "DiaBP", 79.69355, 1.2241013,
+  "Moderate", "SysBP", 131.7338, 1.5415797,
+  "Moderate", "DiaBP", 79.19403, 0.8022114,
+  "Heavy", "SysBP", 135.7479, 0.9320387,
+  "Heavy", "DiaBP", 80.95062, 0.4976859
+)
+
+# Ensuring proper ordering
+smokers_tb$smkerst <- factor(smokers_tb$smkerst, levels = c("Light", "Moderate", "Heavy"))
+
+ggplot(smokers_tb,
+       aes(x = BPtype,
+           y = value,
+           fill = BPtype)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() +
+  geom_errorbar(aes(ymin = value - SE,
+                    ymax = value + SE,
+                    width = 0.75)) +
+  facet_grid(~smkerst, switch = "x") +
+  labs(title = "Effects of Smoking on Blood Pressure",
+       subtitle = "Separated by Smoking Status",
+       x = "Blood Pressure Type",
+       y = "Mean Value (mmHg)",
+       fill = "Blood Pressure Type") +
+  theme(axis.text.x = element_blank())
+```
+
+Bar graph of blood pressure by smoking status and sex:
+```{r}
+smokers_tb_sex <- tribble(
+  ~smkerst, ~sex, ~BPtype, ~value, ~SE,
+  "Light", "Male", "SysBP", 134.9444, 3.508537,
+  "Light", "Male", "DiaBP", 80.87500, 2.1920107,
+  "Light", "Female", "SysBP", 135.1316, 3.493090,
+  "Light", "Female", "DiaBP", 78.94737, 1.4470978,
+  "Moderate", "Male", "SysBP", 132.3014, 2.182780,
+  "Moderate", "Male", "DiaBP", 78.79452, 1.3806128,
+  "Moderate", "Female", "SysBP", 131.4102, 2.081844,
+  "Moderate", "Female", "DiaBP", 79.42188, 0.9869261,
+  "Heavy", "Male", "SysBP", 136.3764, 1.177746,
+  "Heavy", "Male", "DiaBP", 81.55535, 0.6434208,
+  "Heavy", "Female", "SysBP", 134.9558, 1.496394,
+  "Heavy", "Female", "DiaBP", 80.18837, 0.7782584
+)
+
+# Ensuring proper ordering
+smokers_tb_sex$smkerst <- factor(smokers_tb_sex$smkerst, levels = c("Light", "Moderate", "Heavy"))
+
+ggplot(smokers_tb_sex,
+       aes(x = BPtype,
+           y = value,
+           fill = BPtype)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() +
+  geom_errorbar(aes(ymin = value - SE,
+                    ymax = value + SE,
+                    width = 0.75)) +
+  facet_grid(~smkerst, switch = "x") +
+  labs(title = "Figure 1",
+       subtitle = "Effects of Smoking on Blood Pressure",
+       x = "Blood Pressure Type",
+       y = "Mean Value (mmHg)",
+       fill = "Blood Pressure Type") +
+  theme(axis.text.x = element_blank())
+```
+
+Bar graph of heart rate by smoking status:
+```{r}
+ggplot(smokers_descrip,
+       aes(x = smkerst,
+           y = Mean_Heartrate)) +
+  geom_bar(stat = "identity",
+           fill = "firebrick") +
+  theme_minimal() +
+  geom_errorbar(aes(
+    ymin = Mean_Heartrate - SE_Heartrate,
+    ymax = Mean_Heartrate + SE_Heartrate,
+    width = 0.75
+  )) +
+  labs(title = "Effects of Smoking on Heart Rate",
+       subtitle = "Separated by Smoking Status",
+       x = "Smoking Status",
+       y = "Mean Value (bpm)")
+```
+
+Bar graph of heart rate by smoking status and sex:
+```{r}
+ggplot(smokers_descrip_sex,
+       aes(x = smkerst,
+           y = Mean_Heartrate,
+           fill = sex)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() +
+  geom_errorbar(aes(
+    ymin = Mean_Heartrate - SE_Heartrate,
+    ymax = Mean_Heartrate + SE_Heartrate,
+    width = 0.75
+  )) +
+  facet_wrap(~smkerst, switch = "x") +
+  labs(title = "Figure 2",
+       subtitle = "Effects of Smoking on Heart Rate",
+       x = "Smoking Status",
+       y = "Mean Value (bpm)",
+       fill = "Sex") +
+  theme(axis.text.x = element_blank())
+```
+
+## Statistical Analysis
+
+### Blood Pressure Analysis
+```{r}
+# Blood pressure analysis
+smokers_sysbp_aov <- aov(sysbp ~ smkerst, data = smokers)
+summary(smokers_sysbp_aov) # Note: 90% confidence in heavy vs. moderate difference
+```
+
+### Heart Rate Analysis (by smoking status)
+```{r}
+# Heart rate analysis
+smokers_hr_aov <- aov(heartrte ~ smkerst, data = smokers)
+summary(smokers_hr_aov) # Note: 90% confidence in marginal differences
+```
+
+### Sex-Specific Analysis
+```{r}
+# Female blood pressure analysis
+fem_sys_aov <- aov(sysbp ~ smkerst, data = filter(smokers, sex == "Female"))
+summary(fem_sys_aov) # Note: 90% confidence in marginal effects (p > 0.1)
+```
+
+### Post-hoc Analysis (Female)
+```{r}
+ScheffeTest(fem_sys_aov) # Note: 90% confidence in marginal differences
+```
