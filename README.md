@@ -42,8 +42,8 @@ Example visualizations:
 ---
 
 ## 🔎 Full Report
-- 👉 [View the complete HTML report](docs/analysis.html)  
-- 👉 [Download the full research paper (PDF)](Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf)   
+- 👉 [View the complete HTML report](https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/)  
+- 👉 [Download the full research paper (PDF)](https://raw.githubusercontent.com/theonliestmattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/main/Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf)   
 
 ---
 
