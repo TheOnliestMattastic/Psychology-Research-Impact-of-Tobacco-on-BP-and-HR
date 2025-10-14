@@ -7,78 +7,123 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 library(tidyverse)
-
+library(DescTools) # for Scheffe post-hoc
 ```
 
 ## Introduction
-This analysis explores the relationship between tobacco use and cardiovascular health indicators (blood pressure and heart rate). The dataset includes measures of systolic BP, diastolic BP, and HR across smoking status and sex.
+This analysis explores the relationship between tobacco use and cardiovascular health indicators (blood pressure and heart rate). The dataset includes measures of systolic BP, diastolic BP, and HR across smoking intensity and sex.
 
 ## Data Import & Cleaning
-
 ```{r}
-heart <- read.csv("data/dataset.csv")
-glimpse(heart)
+# Load dataset
+heart <- read.csv("../data/dataset.csv")
 
+# Select relevant variables
+heart <- heart %>%
+  select(randid, sex, age, sysbp, diabp, cigpday, heartrte, prevhyp, hyperten, timehyp)
+
+# Filter for smokers only
+smokers <- heart %>% filter(cigpday >= 1)
+
+# Create smoker intensity groups
+smokers <- smokers %>%
+  mutate(
+    smkerst = case_when(
+      cigpday <= 5 ~ "Light",
+      cigpday >= 6 & cigpday <= 20 ~ "Moderate",
+      cigpday >= 21 ~ "Heavy"
+    ),
+    sex = factor(sex, labels = c("Male", "Female")),
+    prevhyp = factor(prevhyp, labels = c("Free", "Prev")),
+    hyperten = factor(hyperten, labels = c("Free", "Prev")),
+    smkerst = factor(smkerst, levels = c("Light", "Moderate", "Heavy"))
+  )
+
+glimpse(smokers)
 ```
 
 ## Descriptive Statistics
-
 ```{r}
-summary(heart)
-
-```
-
-## Blood Pressure by Smoking Status
-I first examine whether smoking status is associated with differences in systolic and diastolic blood pressure.
-
-```{r fig.cap="Mean systolic and diastolic BP by smoking status"}
-
-bp_plot <- heart %>%
-  group_by(SmokingStatus) %>%
+smokers_descrip <- smokers %>%
+  group_by(smkerst) %>%
   summarise(
-    mean_sys = mean(SystolicBP, na.rm=TRUE),
-    mean_dia = mean(DiastolicBP, na.rm=TRUE)
-  ) %>%
-  pivot_longer(cols = starts_with("mean"), names_to="Type", values_to="BP")
+    N = n(),
+    Mean_SysBP = mean(sysbp, na.rm=TRUE),
+    Mean_DiaBP = mean(diabp, na.rm=TRUE),
+    Mean_Heartrate = mean(heartrte, na.rm=TRUE),
+    SD_SysBP = sd(sysbp, na.rm=TRUE),
+    SD_DiaBP = sd(diabp, na.rm=TRUE),
+    SD_Heartrate = sd(heartrte, na.rm=TRUE),
+    SE_SysBP = SD_SysBP/sqrt(N),
+    SE_DiaBP = SD_DiaBP/sqrt(N),
+    SE_Heartrate = SD_Heartrate/sqrt(N)
+  )
 
-ggplot(bp_plot, aes(x=SmokingStatus, y=BP, fill=Type)) +
-  geom_col(position="dodge") +
-  labs(title="Blood Pressure by Smoking Status", x="Smoking Status", y="Mean BP") +
-  theme_minimal()
-
-ggsave("figures/bp_by_status.png", width=6, height=4)
-
+smokers_descrip
 ```
 
-## Heart Rate by Sex
+## Blood Pressure by Smoking Intensity
+```{r fig.cap="Mean systolic and diastolic BP by smoking intensity"}
+bp_long <- smokers %>%
+  group_by(smkerst) %>%
+  summarise(
+    mean_sys = mean(sysbp, na.rm=TRUE),
+    mean_dia = mean(diabp, na.rm=TRUE),
+    se_sys = sd(sysbp, na.rm=TRUE)/sqrt(n()),
+    se_dia = sd(diabp, na.rm=TRUE)/sqrt(n())
+  ) %>%
+  pivot_longer(cols = starts_with("mean"), names_to="Type", values_to="BP") %>%
+  mutate(SE = ifelse(Type=="mean_sys", se_sys, se_dia),
+         Type = recode(Type, mean_sys="Systolic", mean_dia="Diastolic"))
 
-```{r fig.cap="Average heart rate differences by sex"}
-ggplot(heart, aes(x=Sex, y=HeartRate, fill=Sex)) +
-  geom_boxplot() +
-  labs(title="Heart Rate by Sex", x="Sex", y="Heart Rate (bpm)") +
+ggplot(bp_long, aes(x=smkerst, y=BP, fill=Type)) +
+  geom_col(position="dodge") +
+  geom_errorbar(aes(ymin=BP-SE, ymax=BP+SE), position=position_dodge(.9), width=.25) +
+  labs(title="Blood Pressure by Smoking Intensity", x="Smoking Status", y="Mean BP (mmHg)") +
   theme_minimal()
 
-ggsave("figures/hr_by_sex.png", width=6, height=4)
+ggsave("../figures/bp_by_status.png", width=6, height=4)
+```
 
+## Heart Rate by Smoking Intensity and Sex
+```{r fig.cap="Average heart rate by smoking intensity and sex"}
+hr_summary <- smokers %>%
+  group_by(smkerst, sex) %>%
+  summarise(
+    mean_hr = mean(heartrte, na.rm=TRUE),
+    se_hr = sd(heartrte, na.rm=TRUE)/sqrt(n())
+  )
+
+ggplot(hr_summary, aes(x=smkerst, y=mean_hr, fill=sex)) +
+  geom_col(position="dodge") +
+  geom_errorbar(aes(ymin=mean_hr-se_hr, ymax=mean_hr+se_hr), position=position_dodge(.9), width=.25) +
+  labs(title="Heart Rate by Smoking Intensity and Sex", x="Smoking Status", y="Mean HR (bpm)") +
+  theme_minimal()
+
+ggsave("../figures/hr_by_sex.png", width=6, height=4)
 ```
 
 ## Statistical Testing
-We use ANOVA to test whether smoking status significantly affects blood pressure.
-
 ```{r}
+anova_sys <- aov(sysbp ~ smkerst, data=smokers)
+anova_dia <- aov(diabp ~ smkerst, data=smokers)
+anova_hr  <- aov(heartrte ~ smkerst, data=smokers)
 
-anova_sys <- aov(SystolicBP ~ SmokingStatus, data=heart)
 summary(anova_sys)
-
-anova_dia <- aov(DiastolicBP ~ SmokingStatus, data=heart)
 summary(anova_dia)
+summary(anova_hr)
 
+# Post-hoc Scheffe tests
+ScheffeTest(anova_sys)
+ScheffeTest(anova_dia)
+ScheffeTest(anova_hr)
 ```
 
 ## Discussion
-- **Blood Pressure:** Smokers show elevated systolic and diastolic BP compared to non‑smokers.  
-- **Heart Rate:** Sex differences are observed, with [insert observed trend].  
-- **Limitations:** Small sample size and self‑reported smoking status may affect generalizability.  
+- **Blood Pressure:** Differences observed across smoking intensity groups.  
+- **Heart Rate:** Variation by sex and smoking intensity.  
+- **Limitations:** Self‑reported smoking, sample size, and cross‑sectional design.  
 
 ## Conclusion
-This project demonstrates reproducible data analysis in R, combining statistical testing with clear visualizations. It highlights the cardiovascular impact of tobacco use and showcases skills in data wrangling, visualization, and communication.
+This project demonstrates reproducible data analysis in R, combining data cleaning, descriptive statistics, ANOVA, and visualization. It highlights the cardiovascular impact of tobacco use and showcases skills in data wrangling, visualization, and communication.
+```

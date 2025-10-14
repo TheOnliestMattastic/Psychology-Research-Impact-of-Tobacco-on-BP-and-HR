@@ -1,0 +1,22 @@
+# R history and session files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# RStudio project files
+*.Rproj
+
+# Knitted outputs (optional: keep only HTML you want to share)
+*.pdf
+*.docx
+
+# Cache and temporary files
+*_cache/
+cache/
+*.utf8.md
+*.knit.md
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
