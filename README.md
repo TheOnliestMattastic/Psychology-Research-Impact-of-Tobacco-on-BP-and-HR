@@ -1,16 +1,17 @@
 # Impact of Tobacco on Blood Pressure & Heart Rate
 
-This project showcases my ability to conduct **end‑to‑end data analysis in R** — from cleaning and structuring raw data, to performing statistical tests, to presenting results in a clear, reproducible format.  
+This repository contains my undergraduate psychology research project analyzing the impact of tobacco use on blood pressure (BP) and heart rate (HR).  
+It demonstrates **end-to-end data analysis in R** — from cleaning and structuring raw data, to performing statistical tests, to presenting results in a clear, reproducible format.  
 
-Originally completed as an undergraduate psychology research project, I’ve rebuilt and documented it here to demonstrate the technical, analytical, and communication skills I bring to IT and data‑driven roles.
+Originally completed as an academic study, I’ve rebuilt and documented it here to showcase the **technical, analytical, and communication skills** I bring to IT and data-driven roles.
 
 ---
 
 ## 🚀 Project Highlights
 - **Reproducible workflow**: Analysis scripted in R Markdown and published as an HTML report.  
-- **Statistical rigor**: ANOVA and post‑hoc testing to evaluate group differences.  
-- **Data visualization**: Clear, publication‑quality plots created with `ggplot2`.  
-- **Communication**: Results presented for both technical and non‑technical audiences.  
+- **Statistical rigor**: ANOVA and post-hoc testing to evaluate group differences.  
+- **Data visualization**: Publication-quality plots created with `ggplot2`.  
+- **Communication**: Results presented for both technical and non-technical audiences.  
 - **Version control**: Organized repo structure with Git/GitHub for transparency and collaboration.  
 
 ---
@@ -20,28 +21,29 @@ Originally completed as an undergraduate psychology research project, I’ve reb
 - `analysis/analysis.Rmd` — full R Markdown analysis  
 - `docs/analysis.html` — knitted HTML report (viewable without R)  
 - `docs/figures/` — exported plots for quick reference  
+- `Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf` — full research paper  
 
 ---
 
 ## 📊 Key Findings
-- **Blood Pressure**: Smokers showed higher mean systolic and diastolic BP compared to non‑smokers.  
-- **Heart Rate**: Significant differences observed across sex and smoking intensity groups.  
-- **Smoking Intensity**: Clear gradient effects from light → moderate → heavy smoking categories.  
+- **Blood Pressure**: Heavy smokers exhibited significantly higher systolic BP compared to moderate smokers.  
+- **Diastolic BP**: Differences approached significance, suggesting possible dose effects.  
+- **Heart Rate**: No overall group differences, but moderate-smoking women showed slightly higher HR than men.  
+- **Gender Effects**: Female heavy smokers had higher SBP than female moderates.  
 
 Example visualizations:
 
 ![Blood Pressure by Smoking Status](docs/figures/bp_by_status.png)  
-*Mean systolic and diastolic BP by smoking status.*
+*Mean systolic and diastolic BP by smoking intensity.*
 
 ![Heart Rate by Sex](docs/figures/hr_by_sex.png)  
-*Average heart rate differences by sex.*
+*Average HR differences by sex.*
 
 ---
 
 ## 🔎 Full Report
-👉 [View the complete HTML report](https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/analysis.html)  
-
-👉 [Browse the repository on GitHub](https://github.com/TheOnliestMattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR)
+- 👉 [View the complete HTML report](docs/analysis.html)  
+- 👉 [Download the full research paper (PDF)](Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf)   
 
 ---
 
@@ -50,7 +52,7 @@ To reproduce the analysis locally:
 
 ```r
 # Install required packages
-install.packages(c("tidyverse", "ggplot2", "rmarkdown"))
+install.packages(c("tidyverse", "ggplot2", "rmarkdown, DescTools"))
 
 # Render the report
 rmarkdown::render("analysis/analysis.Rmd")
@@ -64,6 +66,7 @@ rmarkdown::render("analysis/analysis.Rmd")
 - Data visualization with ggplot2  
 - Reproducible research practices (R Markdown, GitHub Pages)  
 - Clear, structured communication of technical results  
+- Professional documentation and version control with Git/GitHub  
 
 ---
 
