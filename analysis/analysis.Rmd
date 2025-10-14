@@ -1,7 +1,13 @@
 ---
 title: "Impact of Tobacco on Blood Pressure & Heart Rate"
 author: "Matthew Poole Chicano"
-output: html_document
+output: 
+  html_document:
+    self_contained: true
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile,
+    encoding = encoding,
+    output_file = "../docs/analysis.html")})
 ---
 
 ```{r setup, include=FALSE}
