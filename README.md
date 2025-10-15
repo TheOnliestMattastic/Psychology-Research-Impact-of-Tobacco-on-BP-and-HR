@@ -1,4 +1,4 @@
-<pre align=center><code style="text-align: left; font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.1; margin: 1rem 0;">
+<pre style="text-align: center"><code style="text-align: left; font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.1; margin: 1rem 0; dislay: inline-block;">
                       _____ _ 
                      /__   \ |__   ___ 
                        / /\/ '_ \ / _ \ 
@@ -18,7 +18,7 @@
 
 # Impact of Tobacco on Blood Pressure & Heart Rate
 
-<p align="center">
+<p style="text-align: center">
   <a href="https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/" target="_blank">
     <img src="https://img.shields.io/badge/Demo-Live%20Report-2980b9?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Demo">
   </a>
