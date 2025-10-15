@@ -1,0 +1,91 @@
+/* Default: Light theme */
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --card-bg: #fff;
+  --header-bg: #2c3e50;
+  --header-text: #fff;
+  --accent: #2980b9;
+  --accent-hover: #1c5980;
+  --secondary: #44475a;
+  --secondary-hover: #6272a4;
+  --logo-color: #2c3e50;
+}
+
+/* Dark theme (Dracula-inspired) */
+[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --text-color: #f8f8f2;
+  --card-bg: #282a36;
+  --header-bg: #44475a;
+  --header-text: #f8f8f2;
+  --accent: #bd93f9;
+  --accent-hover: #9a6df0;
+  --secondary: #6272a4;
+  --secondary-hover: #7082c4;
+  --logo-color: #bd93f9;
+}
+
+/* Apply variables */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  text-align: center;
+}
+
+.project-card {
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.btn.demo {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn.demo:hover {
+  background: var(--accent-hover);
+}
+
+.btn.code {
+  background: var(--secondary);
+  color: #f8f8f2;
+}
+
+.btn.code:hover {
+  background: var(--secondary-hover);
+}
+
+/* ASCII Art Logo Styling */
+.ascii-logo {
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.1;
+  white-space: pre;
+  color: var(--logo-color);
+  text-align: left;
+  margin: 1rem 0;
+  display: inline-block;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  margin-top: 1rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background: var(--accent);
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+#theme-toggle:hover {
+  background: var(--accent-hover);
+}
