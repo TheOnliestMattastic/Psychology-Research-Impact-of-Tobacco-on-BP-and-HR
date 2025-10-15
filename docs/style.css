@@ -104,6 +104,10 @@ img, .logo, .project-card img {
   }
 }
 
+.header { position: relative; }
+.header .logo { position: relative; top: 0; left: 0; }
+
+
 /* Buttons */
 .buttons {
   margin-top: 1rem;
