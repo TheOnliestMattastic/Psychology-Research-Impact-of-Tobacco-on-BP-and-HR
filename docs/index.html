@@ -8,8 +8,9 @@
 </head>
 <body>
   <header>
-    <button id="theme-toggle">🌙 Dark Mode</button>
-    <pre class="ascii-logo" ><code>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+    <pre class="ascii-logo"><code>
                       _____ _ 
                      /__   \ |__   ___ 
                        / /\/ '_ \ / _ \ 
@@ -26,9 +27,11 @@
           / /\/\ \ (_| | |_| || (_| \__ \ |_| | (__ 
           \/    \/\__,_|\__|\__\__,_|___/\__|_|\___| 
     </code></pre>
-    <h1 style="text-align: left">Impact of Tobacco on Blood Pressure & Heart Rate</h1>
-    <p style="text-align: left">Undergraduate Research Project by Matthew Poole Chicano</p>
+
+    <h1>Impact of Tobacco on Blood Pressure & Heart Rate</h1>
+    <p>Undergraduate Research Project by Matthew Poole Chicano</p>
   </header>
+
   <main>
     <div class="project-card">
       <h2>Introduction</h2>
@@ -94,13 +97,14 @@
   <footer>
     &copy; 2025 Matthew Poole Chicano — Built with R, R Markdown, and GitHub Pages
   </footer>
+
   <script>
     const toggleBtn = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme');
 
     if (currentTheme) {
       document.documentElement.setAttribute('data-theme', currentTheme);
-      toggleBtn.textContent = currentTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+      toggleBtn.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
     }
 
     toggleBtn.addEventListener('click', () => {
@@ -108,11 +112,11 @@
       if (theme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = '🌙 Dark Mode';
+        toggleBtn.textContent = '🌙';
       } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
-        toggleBtn.textContent = '☀️ Light Mode';
+        toggleBtn.textContent = '☀️';
       }
     });
   </script>
