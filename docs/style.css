@@ -85,28 +85,27 @@ h2 {
   border-radius: 2px;
 }
 
-img, .logo, .project-card img {
+img, .ascii-logo, .project-card img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-.header .logo, .site-logo {
+.header .ascii-logo {
   max-width: 140px; /* adjust for design */
   width: 30%;
   height: auto;
   display: block;
 }
 @media (min-width: 768px) {
-  .header .logo, .site-logo {
+  .header .ascii-logo {
     width: auto;
     max-width: 200px;
   }
 }
 
 .header { position: relative; }
-.header .logo { position: relative; top: 0; left: 0; }
-.site-logo { margin: 0 auto; }
+.header .ascii-logo { position: relative; top: 0; left: 0; }
 
 /* Buttons */
 .buttons {
