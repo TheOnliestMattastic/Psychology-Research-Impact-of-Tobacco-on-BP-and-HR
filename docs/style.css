@@ -91,19 +91,6 @@ img, .ascii-logo, .project-card img {
   display: block;
 }
 
-.header .ascii-logo {
-  max-width: 140px; /* adjust for design */
-  width: 30%;
-  height: auto;
-  display: block;
-}
-@media (min-width: 768px) {
-  .header .ascii-logo {
-    width: auto;
-    max-width: 200px;
-  }
-}
-
 .header { position: relative; }
 .header .ascii-logo { position: relative; top: 0; left: 0; }
 
