@@ -1,6 +1,46 @@
+<pre align=center><code style="text-align: left; font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.1; margin: 1rem 0;">
+                      _____ _ 
+                     /__   \ |__   ___ 
+                       / /\/ '_ \ / _ \ 
+                      / /  | | | |  __/ 
+                      \/   |_| |_|\___| 
+    ___               ___       ___       _ _           _ 
+   /___\_ __   ___   ( _ )     /___\_ __ | (_) ___  ___| |_ 
+  //  // '_ \ / _ \  / _ \/\  //  // '_ \| | |/ _ \/ __| __| 
+ / \_//| | | |  __/ | (_>  < / \_//| | | | | |  __/\__ \ |_ 
+ \___/ |_| |_|\___|  \___/\/ \___/ |_| |_|_|_|\___||___/\__| 
+                        _   _            _   _ 
+            /\/\   __ _| |_| |_ __ _ ___| |_(_) ___ 
+           /    \ / _` | __| __/ _` / __| __| |/ __| 
+          / /\/\ \ (_| | |_| || (_| \__ \ |_| | (__ 
+          \/    \/\__,_|\__|\__\__,_|___/\__|_|\___| 
+</code></pre>
+
 # Impact of Tobacco on Blood Pressure & Heart Rate
 
-This repository contains my undergraduate psychology research project analyzing the impact of tobacco use on blood pressure (BP) and heart rate (HR).  
+<p align="center">
+  <a href="https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/" target="_blank">
+    <img src="https://img.shields.io/badge/Demo-Live%20Report-2980b9?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Demo">
+  </a>
+  <a href="https://github.com/TheOnliestMattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR" target="_blank">
+    <img src="https://img.shields.io/badge/Code-GitHub-44475a?style=for-the-badge&logo=github&logoColor=white" alt="Source Code">
+  </a>
+  <a href="https://img.shields.io/badge/License-CC0--1.0-bd93f9?style=for-the-badge&logo=creative-commons&logoColor=282a36)" target="_blank">
+    <img src="https://img.shields.io/badge/License-CC0--1.0-bd93f9?style=for-the-badge&logo=creative-commons&logoColor=282a36" alt="License: CC0 1.0">
+  </a>
+  <a href="https://www.r-project.org/" target="_blank">
+    <img src="https://img.shields.io/badge/Made%20with-R-276DC3?style=for-the-badge&logo=r&logoColor=white" alt="Made with R">
+  </a>  
+  <a href="https://raw.githubusercontent.com/theonliestmattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/main/Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf" target="_blank">
+    <img src="https://img.shields.io/badge/PDF-Research%20Paper-bd93f9?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Research Paper PDF">
+  </a>
+</p>
+
+---
+
+## 📖 Overview
+This repository contains my undergraduate psychology research project analyzing the **impact of tobacco use on blood pressure (BP) and heart rate (HR)**.  
+
 It demonstrates **end-to-end data analysis in R** — from cleaning and structuring raw data, to performing statistical tests, to presenting results in a clear, reproducible format.  
 
 Originally completed as an academic study, I’ve rebuilt and documented it here to showcase the **technical, analytical, and communication skills** I bring to IT and data-driven roles.
@@ -17,11 +57,17 @@ Originally completed as an academic study, I’ve rebuilt and documented it here
 ---
 
 ## 📂 Repository Structure
-- `data/dataset.csv` — raw dataset used in the analysis  
-- `analysis/analysis.Rmd` — full R Markdown analysis  
-- `docs/analysis.html` — knitted HTML report (viewable without R)  
-- `docs/figures/` — exported plots for quick reference  
-- `Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf` — full research paper  
+```
+├── data/
+│   └── dataset.csv                # Raw dataset
+├── analysis/
+│   └── analysis.Rmd               # Full R Markdown analysis
+├── docs/
+│   ├── analysis.html              # Knitted HTML report
+│   └── figures/                   # Exported plots
+├── Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf  # Full research paper
+└── README.md
+```
 
 ---
 
@@ -43,7 +89,7 @@ Example visualizations:
 
 ## 🔎 Full Report
 - 👉 [View the complete HTML report](https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/)  
-- 👉 [Download the full research paper (PDF)](https://raw.githubusercontent.com/theonliestmattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/main/Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf)   
+- 👉 [Download the full research paper (PDF)](https://raw.githubusercontent.com/theonliestmattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/main/Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf)  
 
 ---
 
@@ -52,7 +98,7 @@ To reproduce the analysis locally:
 
 ```r
 # Install required packages
-install.packages(c("tidyverse", "ggplot2", "rmarkdown, DescTools"))
+install.packages(c("tidyverse", "ggplot2", "rmarkdown", "DescTools"))
 
 # Render the report
 rmarkdown::render("analysis/analysis.Rmd")
