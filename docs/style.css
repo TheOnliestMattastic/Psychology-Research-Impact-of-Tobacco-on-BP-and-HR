@@ -14,7 +14,6 @@
   --footer-text: #1e1e1e;
 }
 
-
 /* Dark theme (Dracula classic) */
 [data-theme="dark"] {
   --bg-color: #1e1e1e; 
@@ -84,6 +83,12 @@ h2 {
   height: auto;
   border: 1px solid #ccc;
   border-radius: 2px;
+}
+
+img, .logo, .project-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Buttons */
