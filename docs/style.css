@@ -106,7 +106,7 @@ img, .logo, .project-card img {
 
 .header { position: relative; }
 .header .logo { position: relative; top: 0; left: 0; }
-
+.site-logo { margin: 0 auto; }
 
 /* Buttons */
 .buttons {
