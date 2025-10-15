@@ -75,10 +75,10 @@ h2 {
 }
 
 .preview img {
-  max-width: 1200px;   /* limit image size */
+  max-width: 800px;   /* limit image size */
   height: auto;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 /* Buttons */
