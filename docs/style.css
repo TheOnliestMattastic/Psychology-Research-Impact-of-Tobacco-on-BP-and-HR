@@ -91,6 +91,19 @@ img, .logo, .project-card img {
   display: block;
 }
 
+.header .logo, .site-logo {
+  max-width: 140px; /* adjust for design */
+  width: 30%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 768px) {
+  .header .logo, .site-logo {
+    width: auto;
+    max-width: 200px;
+  }
+}
+
 /* Buttons */
 .buttons {
   margin-top: 1rem;
