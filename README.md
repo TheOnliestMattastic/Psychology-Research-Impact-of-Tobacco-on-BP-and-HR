@@ -23,8 +23,6 @@ _A reproducible research project turning raw data into clear insights._
   </a>
 </p>
 
----
-
 ## 📖 Overview
 This repository contains my **undergraduate psychology research project** analyzing the impact of tobacco use on blood pressure (BP) and heart rate (HR).  
 
@@ -32,13 +30,12 @@ It demonstrates **end-to-end data analysis in R** — from cleaning and structur
 
 Originally completed as an academic study, I’ve rebuilt and documented it here to highlight my **technical, analytical, and communication skills** that transfer directly into IT support, automation, and data-driven roles.
 
----
-
 ## 🛠️ Tech Stack
-![R](https://img.shields.io/badge/R-276DC3?logo=r&logoColor=white)
-![RMarkdown](https://img.shields.io/badge/RMarkdown-198CE7?logo=rstudio&logoColor=white)
-![ggplot2](https://img.shields.io/badge/ggplot2-44475a?logo=r&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub_Pages-181717?logo=github&logoColor=white)
+[![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)](https://www.r-project.org/)
+[![RMarkdown](https://img.shields.io/badge/RMarkdown-198CE7?style=for-the-badge&logo=rstudio&logoColor=white)](https://rmarkdown.rstudio.com/)
+[![Tidyverse](https://img.shields.io/badge/Tidyverse-1e90ff?style=for-the-badge&logo=r&logoColor=white)](https://www.tidyverse.org/)
+[![ggplot2](https://img.shields.io/badge/ggplot2-44475a?style=for-the-badge&logo=r&logoColor=white)](https://ggplot2.tidyverse.org/)
+[![Deployed](https://img.shields.io/badge/Deployed-2980b9?style=for-the-badge&logo=githubpages&logoSize=auto&logoColor=white&labelColor=44475a)](https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/)
 
 ---
 
@@ -48,8 +45,6 @@ Originally completed as an academic study, I’ve rebuilt and documented it here
 - ✅ **Data visualization** with publication‑quality plots (`ggplot2`)  
 - ✅ **Clear communication** for both technical and non‑technical audiences  
 - ✅ **Version control** with Git/GitHub for transparency  
-
----
 
 ## 🚀 Getting Started
 ### Prerequisites
@@ -71,8 +66,6 @@ install.packages(c("tidyverse", "ggplot2", "rmarkdown", "DescTools"))
 rmarkdown::render("analysis/analysis.Rmd")
 ```
 
----
-
 ## 📂 Repo Structure
 ```plaintext
 ├── data/
@@ -85,8 +78,6 @@ rmarkdown::render("analysis/analysis.Rmd")
 ├── Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf  # Full research paper
 └── README.md
 ```
-
----
 
 ## 📊 Key Findings
 - **Systolic BP**: Heavy smokers > moderate smokers (significant)  
@@ -102,15 +93,11 @@ Example visualizations:
 ![Heart Rate by Sex](docs/figures/hr_by_sex.png)  
 *Average HR differences by sex.*  
 
----
-
 ## 🧩 Lessons Learned
 - Built confidence in **reproducible research workflows**  
 - Strengthened **data visualization and statistical testing** skills  
 - Practiced **clear documentation** for both academic and technical audiences  
 - Reinforced habits of **version control and transparency**  
-
----
 
 ## 🎯 Why This Matters for Recruiters
 This project shows I can:  
@@ -118,8 +105,6 @@ This project shows I can:
 - Build **reproducible, documented workflows**  
 - Communicate results to **diverse audiences**  
 - Apply **rigorous documentation and GitHub practices**  
-
----
 
 ## 📫 Contact
 - **Portfolio:** [TheOnliestMattastic.github.io](https://theonliestmattastic.github.io/)  
