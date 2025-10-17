@@ -17,20 +17,16 @@ ___________.__             ________         .__  .__                 __
 _A reproducible research project turning raw data into clear insights._
 
 <!-- Badges -->
-<p> 
-  <!-- GitHub Pages Badge -->
+<p>
   <a href="https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/" target="_blank">
     <img src="https://img.shields.io/badge/Live_Report-bd93f9?style=for-the-badge&logo=githubpages&logoSize=auto&logoColor=white&labelColor=6272a4" alt="Live Report">
   </a>
-  <!-- GitHub Repo Badge -->
   <a href="https://github.com/TheOnliestMattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-Code-bd93f9?style=for-the-badge&logo=github&logoColor=white&labelColor=6272a4" alt="Source Code">
   </a>
-  <!-- PDF Research Paper Badge -->
   <a href="https://raw.githubusercontent.com/theonliestmattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/main/Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf" target="_blank">
     <img src="https://img.shields.io/badge/Research_Paper-PDF-bd93f9?style=for-the-badge&labelColor=6272a4" alt="Research Paper PDF">
   </a>
-  <!-- License Badge -->
   <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">
     <img src="https://img.shields.io/badge/License-CC0_1.0-bd93f9?style=for-the-badge&logo=creative-commons&logoColor=white&labelColor=6272a4" alt="License: CC0 1.0">
   </a>
