@@ -19,6 +19,7 @@ _A reproducible research project turning raw data into clear insights._
 <!-- Badges -->
 [![Live Report](https://img.shields.io/badge/Report-Live_Site-bd93f9?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=6272a4)](https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/)
 [![View Full Analysis](https://img.shields.io/badge/R_Analysis-Full_Report-bd93f9?style=for-the-badge&logo=r&logoColor=white&labelColor=6272a4)](https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/analysis.html)
+![License](https://img.shields.io/badge/License-CC0--1.0-bd93f9?style=for-the-badge&logo=creativecommons&logoColor=white&labelColor=6272a4) 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live_Site-bd93f9?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=6272a4)](https://theonliestmattastic.github.io/)
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-bd93f9?style=for-the-badge&logo=github&logoColor=white&labelColor=6272a4)](https://github.com/theonliestmattastic)
 
@@ -95,6 +96,10 @@ Example visualizations:
 - Strengthened **data visualization and statistical testing** skills  
 - Practiced **clear documentation** for both academic and technical audiences  
 - Reinforced habits of **version control and transparency**  
+
+## 🛸 License
+
+This project is licensed under the [CC0‑1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ## 🪐 Why This Matters for Recruiters
 This project shows I can:  

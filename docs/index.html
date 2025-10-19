@@ -36,76 +36,85 @@ ___________.__             ________         .__  .__                 __
 /    Y    \/ __ \|  |  |  |  / __ \_\___ \  |  | |  \  \___               
 \____|__  (____  /__|  |__| (____  /____  > |__| |__|\___  >              
         \/     \/                \/     \/               \/               </code></pre>
-        <h1>📊 Impact of Tobacco on Blood Pressure & Heart Rate</h1>
-        <h2>Undergraduate Research Project by Matthew Poole Chicano</h2>
+      
+      <h1>📊 Impact of Tobacco on Blood Pressure & Heart Rate</h1>
+      <h2>Undergraduate Research Project by Matthew Poole Chicano</h2>
 
-        <div class="buttons">
-          <!-- Report -->
-          <a href="https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/analysis.html" target="_blank"><img alt="View Full Analysis" src="https://img.shields.io/badge/R_Analysis-Full_Report-bd93f9?style=for-the-badge&logo=r&logoColor=white&labelColor=6272a4"></a>
-          <!-- Source -->
-          <a href="https://github.com/theonliestmattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR"><img alt="Live Site" src="https://img.shields.io/badge/GitHub-Code-bd93f9?style=for-the-badge&logo=github&logoColor=white&labelColor=6272a4"></a>
-          <!-- Portfolio -->
-          <a href="https://theonliestmattastic.github.io/"><img alt="Portfolio Website" src="https://img.shields.io/badge/Portfolio-Live_Site-bd93f9?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=6272a4"></a>
-          <!-- Profile -->
-          <a href="https://github.com/theonliestmattastic"><img alt="GitHub Profile" src="https://img.shields.io/badge/GitHub-Profile-bd93f9?style=for-the-badge&logo=github&logoColor=white&labelColor=6272a4"></a>
+      <div class="buttons">
+        <!-- Report -->
+        <a href="https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/analysis.html" target="_blank"><img alt="View Full Analysis" src="https://img.shields.io/badge/R_Analysis-Full_Report-bd93f9?style=for-the-badge&logo=r&logoColor=white&labelColor=6272a4"></a>
+        <!-- Source -->
+        <a href="https://github.com/theonliestmattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR"><img alt="Live Site" src="https://img.shields.io/badge/GitHub-Code-bd93f9?style=for-the-badge&logo=github&logoColor=white&labelColor=6272a4"></a>
+        <!-- License -->
+        <img src="https://img.shields.io/badge/License-CC0--1.0-bd93f9?style=for-the-badge&logo=creativecommons&logoColor=white&labelColor=6272a4">
+        <!-- Portfolio -->
+        <a href="https://theonliestmattastic.github.io/"><img alt="Portfolio Website" src="https://img.shields.io/badge/Portfolio-Live_Site-bd93f9?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=6272a4"></a>
+        <!-- Profile -->
+        <a href="https://github.com/theonliestmattastic"><img alt="GitHub Profile" src="https://img.shields.io/badge/GitHub-Profile-bd93f9?style=for-the-badge&logo=github&logoColor=white&labelColor=6272a4"></a>
+      </div>
+
+    </header>
+
+    <main>
+
+      <div class="project-card">
+        <h2>🧑‍🔬 Introduction</h2>
+        <p>
+          Cardiovascular diseases (CVD) are the leading cause of preventable mortality worldwide. 
+          Hypertension and tobacco consumption are two of the most significant risk factors. 
+          This project investigates the relationship between cigarette smoking and cardiovascular 
+          measures — specifically systolic blood pressure (SBP), diastolic blood pressure (DBP), 
+          and heart rate (HR) — using data from the Framingham Heart Study.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h2>📋 Methods</h2>
+        <p>
+          A subset of 780 self-identified smokers aged 44–80 years was analyzed. Participants were 
+          categorized into three groups: Light (≤5 cigarettes/day), Moderate (6–20/day), and Heavy (≥21/day). 
+          One-way ANOVAs and t-tests were conducted to examine differences in SBP, DBP, and HR across groups 
+          and by sex. Visualizations were generated in R with <code>ggplot2</code>.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h2>📈 Results</h2>
+        <p>
+          Heavy smokers exhibited significantly higher SBP compared to moderate smokers. DBP differences 
+          approached significance, while HR showed no overall group differences. Stratified analyses revealed 
+          that female heavy smokers had higher SBP than female moderates, and moderate-smoking women had 
+          slightly higher HR than men in the same group.
+        </p>
+
+        <div class="preview">
+          <figure>
+            <img src="figures/bp_by_status.png" alt="Blood Pressure by Smoking Status">
+            <figcaption>Figure 1. Mean systolic and diastolic BP by smoking intensity.</figcaption>
+          </figure>
+          <figure>
+            <img src="figures/hr_by_sex.png" alt="Heart Rate by Sex">
+            <figcaption>Figure 2. Mean HR by smoking intensity and sex.</figcaption>
+          </figure>
         </div>
 
-      </header>
+      </div>
 
-      <main>
-
-        <div class="project-card">
-          <h2>🧑‍🔬 Introduction</h2>
-          <p>
-            Cardiovascular diseases (CVD) are the leading cause of preventable mortality worldwide. 
-            Hypertension and tobacco consumption are two of the most significant risk factors. 
-            This project investigates the relationship between cigarette smoking and cardiovascular 
-            measures — specifically systolic blood pressure (SBP), diastolic blood pressure (DBP), 
-            and heart rate (HR) — using data from the Framingham Heart Study.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h2>📋 Methods</h2>
-          <p>
-            A subset of 780 self-identified smokers aged 44–80 years was analyzed. Participants were 
-            categorized into three groups: Light (≤5 cigarettes/day), Moderate (6–20/day), and Heavy (≥21/day). 
-            One-way ANOVAs and t-tests were conducted to examine differences in SBP, DBP, and HR across groups 
-            and by sex. Visualizations were generated in R with <code>ggplot2</code>.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h2>📈 Results</h2>
-          <p>
-            Heavy smokers exhibited significantly higher SBP compared to moderate smokers. DBP differences 
-            approached significance, while HR showed no overall group differences. Stratified analyses revealed 
-            that female heavy smokers had higher SBP than female moderates, and moderate-smoking women had 
-            slightly higher HR than men in the same group.
-          </p>
-
-          <div class="preview">
-            <figure>
-              <img src="figures/bp_by_status.png" alt="Blood Pressure by Smoking Status">
-              <figcaption>Figure 1. Mean systolic and diastolic BP by smoking intensity.</figcaption>
-            </figure>
-            <figure>
-              <img src="figures/hr_by_sex.png" alt="Heart Rate by Sex">
-              <figcaption>Figure 2. Mean HR by smoking intensity and sex.</figcaption>
-            </figure>
-          </div>
-
-        </div>
-
-        <div class="project-card">
-          <h2>👩‍🔬 Discussion</h2>
-          <p>
-            The findings suggest that heavy smoking is associated with elevated blood pressure, reinforcing 
-            smoking as a cardiovascular risk factor. However, the absence of differences between light and 
-            heavy smokers indicates that other variables (e.g., age, BMI, family history) may confound outcomes. 
-            Gender-specific effects were observed, highlighting the need for further research.
-          </p>
-        </div>
+      <div class="project-card">
+        <h2>👩‍🔬 Discussion</h2>
+        <p>
+          The findings suggest that heavy smoking is associated with elevated blood pressure, reinforcing 
+          smoking as a cardiovascular risk factor. However, the absence of differences between light and 
+          heavy smokers indicates that other variables (e.g., age, BMI, family history) may confound outcomes. 
+          Gender-specific effects were observed, highlighting the need for further research.
+        </p>
+      </div>
+    
+      <!-- License -->
+      <div class="project-card">
+        <h2>🛸 License</h2>
+        <p>Distributed under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0-1.0 Universal License</a>.</p>
+      </div>
 
       <!-- Contact (call to action) -->
       <div class="project-card">
