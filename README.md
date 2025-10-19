@@ -36,7 +36,7 @@ Originally completed as an academic study, I’ve rebuilt and documented it here
 [![ggplot2](https://img.shields.io/badge/Visualization-ggplot2-bd93f9?style=for-the-badge&logo=tidyverse&logoColor=white&labelColor=6272a4)](https://ggplot2.tidyverse.org/)
 [![DescTools](https://img.shields.io/badge/Package-DescTools-bd93f9?style=for-the-badge&logo=r&logoColor=white&labelColor=6272a4)](https://cran.r-project.org/web/packages/DescTools/index.html)
 
-## 🪐 Features
+## ☄️ Features
 - ✅ **Reproducible workflow** scripted in R Markdown  
 - ✅ **Statistical rigor**: ANOVA + post‑hoc testing  
 - ✅ **Data visualization** with publication‑quality plots (`ggplot2`)  
@@ -77,10 +77,10 @@ rmarkdown::render("analysis/analysis.Rmd")
 ```
 
 ## 🔬 Key Findings
-- **Systolic BP**: Heavy smokers > moderate smokers (significant)  
-- **Diastolic BP**: Near‑significant differences, suggesting dose effects  
-- **Heart Rate**: No overall group differences, but moderate‑smoking women > men  
-- **Gender Effects**: Female heavy smokers > female moderates in SBP  
+- **Systolic BP:** Heavy smokers > moderate smokers (significant)  
+- **Diastolic BP:** Near‑significant differences, suggesting dose effects  
+- **Heart Rate:** No overall group differences, but moderate‑smoking women > men  
+- **Gender Effects:** Female heavy smokers > female moderates in SBP  
 
 Example visualizations:  
 
@@ -90,13 +90,13 @@ Example visualizations:
 ![Heart Rate by Sex](docs/figures/hr_by_sex.png)  
 *Average HR differences by sex.*  
 
-## 🧪 Lessons Learned
+## 📡 Lessons Learned
 - Built confidence in **reproducible research workflows**  
 - Strengthened **data visualization and statistical testing** skills  
 - Practiced **clear documentation** for both academic and technical audiences  
 - Reinforced habits of **version control and transparency**  
 
-## ☄️ Why This Matters for Recruiters
+## 🪐 Why This Matters for Recruiters
 This project shows I can:  
 - Translate **raw data into actionable insights**  
 - Build **reproducible, documented workflows**  
