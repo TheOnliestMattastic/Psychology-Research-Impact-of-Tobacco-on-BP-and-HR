@@ -132,4 +132,3 @@ ScheffeTest(anova_hr)
 
 ## Conclusion
 This project demonstrates reproducible data analysis in R, combining data cleaning, descriptive statistics, ANOVA, and visualization. It highlights the cardiovascular impact of tobacco use and showcases skills in data wrangling, visualization, and communication.
-```
