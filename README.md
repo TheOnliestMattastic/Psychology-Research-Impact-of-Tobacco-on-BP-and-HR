@@ -17,26 +17,26 @@ ___________.__             ________         .__  .__                 __
 _A reproducible research project turning raw data into clear insights._
 
 <!-- Badges -->
-[![Portfolio](https://img.shields.io/badge/Live_Report-bd93f9?style=for-the-badge&logo=githubpages&logoSize=auto&labelColor=6272a4)](https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/)
-[![GitHub](https://img.shields.io/badge/GitHub-Code-bd93f9?style=for-the-badge&logo=github&logoColor=white&labelColor=6272a4)](https://github.com/TheOnliestMattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR)
-[![Research Paper](https://img.shields.io/badge/Research_Paper-PDF-bd93f9?style=for-the-badge&labelColor=6272a4)](https://raw.githubusercontent.com/theonliestmattastic/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/main/Impact_of_Tobacco_Consumption_on_BP_and_HR.pdf)
-[![License](https://img.shields.io/badge/License-CC0_1.0-bd93f9?style=for-the-badge&logo=creative-commons&logoColor=white&labelColor=6272a4)](https://creativecommons.org/publicdomain/zero/1.0/)  
+[![Live Report](https://img.shields.io/badge/Report-Live_Site-bd93f9?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=6272a4)](https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/)
+[![View Full Analysis](https://img.shields.io/badge/R_Analysis-Full_Report-bd93f9?style=for-the-badge&logo=r&logoColor=white&labelColor=6272a4)](https://theonliestmattastic.github.io/Psychology-Research-Impact-of-Tobacco-on-BP-and-HR/analysis.html)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live_Site-bd93f9?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=6272a4)](https://theonliestmattastic.github.io/)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-bd93f9?style=for-the-badge&logo=github&logoColor=white&labelColor=6272a4)](https://github.com/theonliestmattastic)
 
-## 📖 Overview
+## 🔭 Overview
 This repository contains my **undergraduate psychology research project** analyzing the impact of tobacco use on blood pressure (BP) and heart rate (HR).  
 
 It demonstrates **end-to-end data analysis in R** — from cleaning and structuring raw data, to running statistical tests, to publishing results in a clear, reproducible format.  
 
 Originally completed as an academic study, I’ve rebuilt and documented it here to highlight my **technical, analytical, and communication skills** that transfer directly into IT support, automation, and data-driven roles.
 
-## 🛠️ Tech Stack
-[![R](https://img.shields.io/badge/R-bd93f9?style=for-the-badge&logo=r&logoColor=white&logoSize=auto&labelColor=6272a4)](https://www.r-project.org/)
-[![RMarkdown](https://img.shields.io/badge/R_Markdown-bd93f9?style=for-the-badge&logo=rstudioide&logoColor=white&logoSize=auto&labelColor=6272a4)](https://rmarkdown.rstudio.com/)
-[![Tidyverse](https://img.shields.io/badge/Tidyverse-bd93f9?style=for-the-badge&logo=tidyverse&logoColor=white&logoSize=auto&labelColor=6272a4)](https://www.tidyverse.org/)
-[![ggplot2](https://img.shields.io/badge/ggplot2-bd93f9?style=for-the-badge&logo=tidyverse&logoColor=white&logoSize=auto&labelColor=6272a4)](https://ggplot2.tidyverse.org/)
-[![DescTools](https://img.shields.io/badge/DescTools-bd93f9?style=for-the-badge&logo=r&logoColor=white&logoSize=auto&labelColor=6272a4)](https://cran.r-project.org/web/packages/DescTools/index.html)
+## 🛰️ Tech Stack
+[![R](https://img.shields.io/badge/Language-R-bd93f9?style=for-the-badge&logo=r&logoColor=white&labelColor=6272a4)](https://www.r-project.org/)
+[![RMarkdown](https://img.shields.io/badge/Docs-RMarkdown-bd93f9?style=for-the-badge&logo=rstudioide&logoColor=white&labelColor=6272a4)](https://rmarkdown.rstudio.com/)
+[![Tidyverse](https://img.shields.io/badge/Library-Tidyverse-bd93f9?style=for-the-badge&logo=tidyverse&logoColor=white&labelColor=6272a4)](https://www.tidyverse.org/)
+[![ggplot2](https://img.shields.io/badge/Visualization-ggplot2-bd93f9?style=for-the-badge&logo=tidyverse&logoColor=white&labelColor=6272a4)](https://ggplot2.tidyverse.org/)
+[![DescTools](https://img.shields.io/badge/Package-DescTools-bd93f9?style=for-the-badge&logo=r&logoColor=white&labelColor=6272a4)](https://cran.r-project.org/web/packages/DescTools/index.html)
 
-## ⚡ Features
+## 🪐 Features
 - ✅ **Reproducible workflow** scripted in R Markdown  
 - ✅ **Statistical rigor**: ANOVA + post‑hoc testing  
 - ✅ **Data visualization** with publication‑quality plots (`ggplot2`)  
@@ -63,7 +63,7 @@ install.packages(c("tidyverse", "ggplot2", "rmarkdown", "DescTools"))
 rmarkdown::render("analysis/analysis.Rmd")
 ```
 
-## 📂 Repo Structure
+## 🗺️ Repo Structure
 ```plaintext
 ├── data/
 │   └── dataset.csv                # Raw dataset
@@ -76,7 +76,7 @@ rmarkdown::render("analysis/analysis.Rmd")
 └── README.md
 ```
 
-## 📊 Key Findings
+## 🔬 Key Findings
 - **Systolic BP**: Heavy smokers > moderate smokers (significant)  
 - **Diastolic BP**: Near‑significant differences, suggesting dose effects  
 - **Heart Rate**: No overall group differences, but moderate‑smoking women > men  
@@ -90,22 +90,26 @@ Example visualizations:
 ![Heart Rate by Sex](docs/figures/hr_by_sex.png)  
 *Average HR differences by sex.*  
 
-## 🧩 Lessons Learned
+## 🧪 Lessons Learned
 - Built confidence in **reproducible research workflows**  
 - Strengthened **data visualization and statistical testing** skills  
 - Practiced **clear documentation** for both academic and technical audiences  
 - Reinforced habits of **version control and transparency**  
 
-## 🎯 Why This Matters for Recruiters
+## ☄️ Why This Matters for Recruiters
 This project shows I can:  
 - Translate **raw data into actionable insights**  
 - Build **reproducible, documented workflows**  
 - Communicate results to **diverse audiences**  
 - Apply **rigorous documentation and GitHub practices**  
 
-## 📫 Contact
-[![Portfolio](https://img.shields.io/badge/Portfolio-bd93f9?style=for-the-badge&logo=githubpages&logoSize=auto&labelColor=6272a4)](https://theonliestmattastic.github.io/)
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-bd93f9?style=for-the-badge&logo=github&logoColor=white&logoSize=auto&labelColor=6272a4)](https://github.com/theonliestmattastic)
-[![Email](https://img.shields.io/badge/matthew.poole485%40gmail.com-bd93f9?style=for-the-badge&logo=gmail&logoColor=white&logoSize=auto&labelColor=6272a4)](mailto:matthew.poole485@gmail.com)
+## 👽 Contact!
+
+Curious about my projects? Want to collaborate or hire for entry-level IT/support/dev roles?
+Shoot me an email or connect on GitHub—I reply quickly and love new challenges.  
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live_Site-bd93f9?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=6272a4)](https://theonliestmattastic.github.io/)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-bd93f9?style=for-the-badge&logo=github&logoColor=white&labelColor=6272a4)](https://github.com/theonliestmattastic)
+[![Email](https://img.shields.io/badge/Email-matthew.poole485%40gmail.com-bd93f9?style=for-the-badge&logo=gmail&logoColor=white&labelColor=6272a4)](mailto:matthew.poole485@gmail.com)  
 
 > _“Sometimes the questions are complicated and the answers are simple.”_ — Dr. Seuss
