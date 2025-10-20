@@ -95,11 +95,21 @@ Example visualizations:
 - Built confidence in **reproducible research workflows**  
 - Strengthened **data visualization and statistical testing** skills  
 - Practiced **clear documentation** for both academic and technical audiences  
-- Reinforced habits of **version control and transparency**  
+- Reinforced habits of **version control and transparency** 
+
+## 📖 Project Purpose
+This project analyzes the **impact of tobacco on blood pressure and heart rate** using R and reproducible workflows.  
+It demonstrates my ability to **clean, analyze, and visualize data** while documenting results clearly for technical and non‑technical audiences.
+
+## 🛠️ Skills Demonstrated
+- R programming & statistical analysis  
+- Data visualization & reproducible reporting (R Markdown → HTML)  
+- Clear documentation for academic and professional review  
 
 ## 🛸 License
 
 This project is licensed under the [CC0‑1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
+
 
 ## 🪐 Why This Matters for Recruiters
 This project shows I can:  
