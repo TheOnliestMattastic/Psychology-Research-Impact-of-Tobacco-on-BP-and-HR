@@ -127,4 +127,4 @@ Shoot me an email or connect on GitHub—I reply quickly and love new challenges
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-bd93f9?style=for-the-badge&logo=github&logoColor=white&labelColor=6272a4)](https://github.com/theonliestmattastic)
 [![Email](https://img.shields.io/badge/Email-matthew.poole485%40gmail.com-bd93f9?style=for-the-badge&logo=gmail&logoColor=white&labelColor=6272a4)](mailto:matthew.poole485@gmail.com)  
 
-> _“Shallow men believe in luck or in circumstance. Strong men believe in cause and effect.”_ —  Dr. Seuss
+> _“Shallow men believe in luck or in circumstance. Strong men believe in cause and effect.”_ — Ralph Waldo Emerson
