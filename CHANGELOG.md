@@ -4,6 +4,14 @@ All notable changes to this research project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Unreleased]
+
+### 🔄 Changed
+
+- **License update** — Switched from CC0-1.0 to MIT for FOSS community alignment
+  - Updated LICENSE file with full MIT license text
+  - Updated README badges and license reference links
+
 ## [2.0.0] - 2025-12-18 (Refactored & Remastered)
 
 ### ✨ Added
